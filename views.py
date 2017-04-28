@@ -30,12 +30,13 @@ class CompanyViewSet(viewsets.ModelViewSet):
 """
 
 
-class CompanyViewSet(ListAPIView):
+class CompanyViewSet(viewsets.ModelViewSet):
     queryset = models.Company.objects.all()
     serializer_class = serializers.CompanySerializer
     distance_filter_field = 'geo_position'
     filter_backends = (DistanceToPointFilter,)
-    bbox_filter_include_overlapping = True  # Optional
+    distance_filter_convert_meters = True
+    bbox_filter_include_overlapping = True
 
 
 class TypeViewSet(viewsets.ModelViewSet):

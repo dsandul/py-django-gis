@@ -70,7 +70,8 @@ class CompanySerializer(gis_serializers.GeoFeatureModelSerializer):
             'website',
             'phone',
             'is_parking',
-            'landmark'
+            'landmark',
+            'main_image_url'
         )
 
 
